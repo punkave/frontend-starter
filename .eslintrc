@@ -1,3 +1,7 @@
 {
-  "extends": "punkave"
+  "extends": "punkave",
+  "globals": {
+    "$": 1,
+    "apos": 1
+  }
 }
