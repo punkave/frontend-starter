@@ -4,6 +4,7 @@
   "description": "front-end starter",
   "main": "gulpfile.babel.js",
   "scripts": {
+    "start": "concurrently --kill-others \"gulp\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,10 +23,12 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.12",
     "browserify": "^14.4.0",
-    "eslint": "^4.1.1",
+    "browserify-shim": "^3.8.14",
+    "concurrently": "^3.5.0",
+    "eslint": "^4.2.0",
     "eslint-config-punkave": "^1.0.8",
     "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
@@ -41,5 +44,13 @@
     "stylelint-config-punkave": "0.0.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
   }
 }
