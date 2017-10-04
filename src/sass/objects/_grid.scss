@@ -67,27 +67,3 @@
 }
 
 @include generate-columns(12);
-
-.o-column--third {
-  width: 100%;
-  @include media('>medium') {
-    width: (100% / 3);
-  }
-  &.o-column--break-sm {
-    @include media('>small') { /* stylelint-disable-line */
-      width: (100% / 3);
-    }
-  }
-}
-
-.o-column--quarter {
-  width: 100%;
-  @include media('>medium') {
-    width: (100% / 4);
-  }
-  &.o-column--break-sm {
-    @include media('>small') { /* stylelint-disable-line */
-      width: (100% / 4);
-    }
-  }
-}
