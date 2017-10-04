@@ -1,0 +1,25 @@
+$black: #000;
+$white: #FFF;
+
+$colors: (
+  text-primary: $black,
+  text-inverse: $white,
+  background: $white,
+  shadow-base: $black
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn 'Unknown `#{$key}` in $colors.';
+  @return null;
+}
+
+@function color-alpha($color, $opacity) {
+  @if map-has-key($colors, $color) {
+    @return rgba(map-get($colors, $color), $opacity);
+  }
+  @warn 'Unknown `#{$color}` in $colors.';
+  @return null;
+}

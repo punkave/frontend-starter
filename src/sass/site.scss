@@ -1,2 +1,23 @@
 @import '../../node_modules/include-media/dist/_include-media';
-// @import '../../node_modules/normalize.css/normalize';
+// Generic:
+@import 'generic/_reset';
+// Settings:
+@import 'settings/_animation';
+@import 'settings/_breakpoints';
+@import 'settings/_colors';
+@import 'settings/_borders';
+@import 'settings/_fonts';
+@import 'settings/_spacing';
+@import 'settings/_zindex';
+// Base Elements:
+@import 'base/_document';
+// Tools:
+@import 'tools/_transitions';
+// Vendor:
+// @import 'vendor/library.scss';
+// Objects:
+// @import 'objects/_object';
+// Components:
+// @import 'components/_component';
+// Utilities:
+@import 'utilities/_display';
