@@ -1,0 +1,15 @@
+$z-index: (
+  under: -1,
+  default: 0,
+  float: 1,
+  nav: 2,
+  modal: 3
+);
+
+@function zindex($key) {
+  @if map-has-key($z-index, $key) {
+    @return map-get($z-index, $key);
+  }
+  @warn 'Unknown `#{$key}` in $z-index.';
+  @return null;
+}

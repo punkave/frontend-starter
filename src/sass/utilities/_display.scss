@@ -1,0 +1,13 @@
+.u-sr-only {
+  position: absolute;
+  left: -999rem;
+  &--focusable:focus,
+  &--focusable:active {
+    z-index: zindex(modal);
+    left: 0;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
