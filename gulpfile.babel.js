@@ -7,8 +7,11 @@ import eslint from 'gulp-eslint';
 import gulp from 'gulp';
 import gulpStylelint from 'gulp-stylelint';
 import notify from 'gulp-notify';
+import path from 'path';
 import sass from 'gulp-sass';
 import source from 'vinyl-source-stream';
+import svgstore from 'gulp-svgstore';
+import svgmin from 'gulp-svgmin';
 
 const src = './src/';
 const dest = './dist/';
@@ -71,6 +74,23 @@ gulp.task('imgs', () =>
     .pipe(gulp.dest(`public/imgs`))
 );
 
+gulp.task('svgstore', () =>
+  gulp.src(`${src}svgs/*.svg`)
+    .pipe(svgmin(function (file) {
+      const prefix = path.basename(file.relative, path.extname(file.relative));
+      return {
+        plugins: [{
+          cleanupIDs: {
+            prefix: prefix + '-',
+            minify: true
+          }
+        }]
+      };
+    }))
+    .pipe(svgstore())
+    .pipe(gulp.dest('public/svgs'))
+);
+
 gulp.task('lint', () =>
   gulp.src([`${src}js/**/*.js`, `!node_modules/**`])
     .pipe(eslint())
@@ -84,7 +104,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['build', 'browser-sync', 'watch'], reload);
-gulp.task('build', ['lint', 'js', 'sass', 'imgs']);
+gulp.task('build', ['lint', 'js', 'sass', 'imgs', 'svgstore']);
 
 // kill node on exit
 process.on('exit', function () {
