@@ -9,3 +9,9 @@ $gutters: (
 $containers: (
   medium: ($spacing-unit * 116);
 );
+
+$blocks: (
+  small: ($spacing-unit * 2),
+  medium: ($spacing-unit * 4),
+  large: ($spacing-unit * 6)
+);

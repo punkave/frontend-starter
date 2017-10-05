@@ -14,3 +14,11 @@
     }
   }
 }
+
+@mixin generate-blocks () {
+  @each $key, $value in $blocks {
+    .o-block--#{$key} {
+      margin-bottom: $value;
+    }
+  }
+}
