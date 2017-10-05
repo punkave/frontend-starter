@@ -5,3 +5,7 @@ $spacing-gutter: ($spacing-unit * 2);
 $gutters: (
   small: $spacing-unit
 );
+
+$containers: (
+  medium: ($spacing-unit * 116);
+);

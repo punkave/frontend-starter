@@ -1,0 +1,10 @@
+@mixin generate-icons () {
+  @each $key, $value in $icons {
+    .o-icon--#{$key} {
+      $width: nth($value, 1);
+      $height: nth($value, 2);
+      width: #{$width}rem;
+      height: #{$height}rem;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@mixin generate-gutters () {
+@mixin generate-containers () {
   @each $key, $value in $containers {
     .o-container--#{$key} {
       max-width: $value;
