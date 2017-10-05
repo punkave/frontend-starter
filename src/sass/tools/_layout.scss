@@ -5,3 +5,12 @@
     }
   }
 }
+
+@mixin generate-gutters () {
+  @each $key, $value in $containers {
+    .o-grid--gutter-#{$key} {
+      margin-left: -$value;
+      > * { padding-left: $value; }
+    }
+  }
+}

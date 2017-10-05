@@ -3,38 +3,11 @@
   flex-wrap: wrap;
 }
 
-.o-grid--center {
-  align-items: center;
-}
+.o-grid--center { align-items: center; }
+.o-grid--justify { justify-content: space-between; }
+.o-grid--stretch { align-items: stretch; }
 
-.o-grid--justify {
-  justify-content: space-between;
-}
-
-.o-grid--stretch {
-  align-items: stretch;
-}
-
-.o-grid--gutter {
-  @include media('>medium') {
-    margin-left: -$spacing-gutter;
-  }
-  > div {
-    @include media('>medium') {
-      padding-left: $spacing-gutter;
-    }
-  }
-  &.o-grid--break-sm {
-    @include media('>small') {
-      margin-left: -$spacing-gutter;
-    }
-    > div {
-      @include media('>small') { /* stylelint-disable-line */
-        padding-left: $spacing-gutter;
-      }
-    }
-  }
-}
+@include generate-gutters ();
 
 @mixin generate-columns($number) {
   @for $i from 1 through $number {
