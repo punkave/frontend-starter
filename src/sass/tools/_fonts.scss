@@ -1,0 +1,9 @@
+@mixin generate-font ($name, $url, $file, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$url}#{$file}.eot');
+    src: url('#{$url}#{$file}.eot?#iefix') format('embedded-opentype'), url('#{$url}#{$file}.woff') format('woff'), url('#{$url}#{$file}.ttf')  format('truetype'), url('#{$url}#{$file}.svg#svgFontName') format('svg');
+  }
+}
