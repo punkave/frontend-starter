@@ -41,7 +41,7 @@ gulp.task('browser-sync', ['server'], function () {
 
 gulp.task('js', () => {
   browserify(`${src}js/site.js`)
-    .transform(babelify, { presets: ['es2015'] })
+    .transform(babelify, { presets: ['env'] })
     .bundle()
     .pipe(source('site.js'))
     .pipe(buffer())
