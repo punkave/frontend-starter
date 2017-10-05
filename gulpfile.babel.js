@@ -11,11 +11,11 @@ import sass from 'gulp-sass';
 import source from 'vinyl-source-stream';
 
 const src = './src/';
-const dest = './dist/';
+const dest = './public/';
 
 const spawn = require('child_process').spawn;
 const reload = browserSync.reload;
-const bs = browserSync.create('proxy');
+const bs = browserSync.create();
 let travis = process.env.TRAVIS || false;
 
 let node;
@@ -33,6 +33,7 @@ gulp.task('server', function () {
 gulp.task('browser-sync', ['server'], function () {
   bs.init({
     proxy: 'localhost:3000',
+    ui: { port: 3002 },
     port: 3001,
     open: false
   });

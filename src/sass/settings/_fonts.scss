@@ -1,0 +1,59 @@
+$font-size-base: 62.5%;
+
+$font-family: (
+  serif: #{'FontFamilyName', serif},
+  sans: #{'FontFamilyName', sans-serif},
+  mono: #{'FontFamilyName', monospace}
+);
+
+$font-size: (
+  title: (
+    marquee: 8.2rem,
+    large: 5.4rem,
+    medium: 3.6rem,
+    small: 2rem
+  ),
+  paragraph: (
+    large: 2rem,
+    base: 1.6rem,
+    small: 1.4rem,
+    meta: 1.2rem,
+    micro: 1rem
+  )
+);
+
+$font-weight: (
+  light: 300,
+  normal: 400,
+  semibold: 600,
+  bold: 700,
+  xbold: 900
+);
+
+@function family($key) {
+  @if map-has-key($font-family, $key) {
+    @return map-get($font-family, $key);
+  }
+  @warn 'Unknown `#{$key}` in $font-family.';
+  @return null;
+}
+
+@function weight($key) {
+  @if map-has-key($font-weight, $key) {
+    @return map-get($font-weight, $key);
+  }
+  @warn 'Unknown `#{$key}` in $font-weight.';
+  @return null;
+}
+
+@mixin font($family: null, $type: null, $size: null, $weight: null) {
+  @if $family {
+    font-family: family($family);
+  }
+  @if $type and $size {
+    font-size: map-get(map-get($font-size, $type), $size);
+  }
+  @if $weight {
+    font-weight: weight($weight); /* stylelint-disable-line */
+  }
+}
