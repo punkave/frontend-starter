@@ -1,3 +1,7 @@
 $spacing-unit: 1rem;
 
 $spacing-gutter: ($spacing-unit * 2);
+
+$containers: (
+  medium: ($spacing-unit * 116);
+);
