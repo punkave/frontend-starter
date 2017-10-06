@@ -9,34 +9,4 @@
 
 @include generate-gutters ();
 
-@mixin generate-columns($number) {
-  @for $i from 1 through $number {
-    .o-column-#{$i} {
-      width: 100%;
-      @include media('>medium') {
-        width: (100% * $i / $number);
-      }
-      &.o-column--break-sm {
-        @include media('>small') { /* stylelint-disable-line */
-          width: (100% * $i / $number);
-        }
-      }
-    }
-    .o-column--offset-#{$i} {
-      margin-left: 0;
-      @include media('>medium') {
-        margin-left: (100% * $i / $number);
-      }
-      &.o-column--break-sm {
-        @include media('>small') { /* stylelint-disable-line */
-          width: (100% * $i / $number);
-        }
-      }
-    }
-    .o-column--order-#{$i} {
-      order: $i;
-    }
-  }
-}
-
-@include generate-columns(12);
+@include generate-columns (12);
