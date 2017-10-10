@@ -1,0 +1,41 @@
+// Font generation mixin a variation of:
+// https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+@mixin generate-font($name, $url, $file, $style: normal, $weight: normal, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: '?#iefix',
+    svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+    eot: 'embedded-opentype',
+    otf: 'opentype',
+    ttf: 'truetype'
+  );
+
+  $eot: if(index($exts, eot), url('#{$url}#{$file}.eot'), null);
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext);
+    $format: if(
+      map-has-key($formats, $ext),
+      map-get($formats, $ext),
+      $ext);
+    $src: append(
+      $src,
+      url(quote($url + $file + '.' + $extmod)) format(quote($format)),
+      comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-weight: $weight;
+    font-style: $style;
+    src: $eot;
+    src: $src;
+  }
+}

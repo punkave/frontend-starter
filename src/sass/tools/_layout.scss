@@ -15,6 +15,18 @@
   }
 }
 
+
+@mixin generate-columns ($number) {
+  @for $i from 1 through $number {
+    .o-column-#{$i} {
+      width: (100% * $i / $number);
+    }
+    .o-column--offset-#{$i} {
+      margin-left: (100% * $i / $number);
+    }
+  }
+}
+
 @mixin generate-blocks () {
   @each $key, $value in $blocks {
     .o-block--#{$key} {
