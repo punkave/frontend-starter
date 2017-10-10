@@ -52,5 +52,8 @@
   },
   "browserify-shim": {
     "jquery": "global:jQuery"
+  },
+  "dependencies": {
+    "svg4everybody": "^2.1.9"
   }
 }
