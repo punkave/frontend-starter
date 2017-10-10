@@ -1,0 +1,36 @@
+@mixin generate-containers () {
+  @each $key, $value in $containers {
+    .o-container--#{$key} {
+      max-width: $value;
+    }
+  }
+}
+
+@mixin generate-gutters () {
+  @each $key, $value in $containers {
+    .o-grid--gutter-#{$key} {
+      margin-left: -$value;
+      > * { padding-left: $value; }
+    }
+  }
+}
+
+
+@mixin generate-columns ($number) {
+  @for $i from 1 through $number {
+    .o-column-#{$i} {
+      width: (100% * $i / $number);
+    }
+    .o-column--offset-#{$i} {
+      margin-left: (100% * $i / $number);
+    }
+  }
+}
+
+@mixin generate-blocks () {
+  @each $key, $value in $blocks {
+    .o-block--#{$key} {
+      margin-bottom: $value;
+    }
+  }
+}

@@ -7,17 +7,25 @@
 @import 'settings/_colors';
 @import 'settings/_borders';
 @import 'settings/_fonts';
+@import 'settings/_icons';
 @import 'settings/_spacing';
 @import 'settings/_zindex';
 // Base Elements:
 @import 'base/_document';
 // Tools:
+@import 'tools/_functions';
+@import 'tools/_fonts';
+@import 'tools/_icons';
+@import 'tools/_layout';
 @import 'tools/_transitions';
 // Vendor:
 // @import 'vendor/library.scss';
 // Objects:
 // @import 'objects/_object';
+@import 'objects/_block';
+@import 'objects/_icon';
 // Components:
 // @import 'components/_component';
 // Utilities:
 @import 'utilities/_display';
+@import 'utilities/_media';
