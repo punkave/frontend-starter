@@ -15,7 +15,6 @@
   }
 }
 
-
 @mixin generate-columns ($number) {
   @for $i from 1 through $number {
     .o-column-#{$i} {
