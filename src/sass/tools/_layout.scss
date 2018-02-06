@@ -7,7 +7,7 @@
 }
 
 @mixin generate-gutters () {
-  @each $key, $value in $containers {
+  @each $key, $value in $gutters {
     .o-grid--gutter-#{$key} {
       margin-left: -$value;
       > * { padding-left: $value; }
