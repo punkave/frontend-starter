@@ -14,7 +14,6 @@ const src = 'src/';
 const dest = 'public/';
 
 const spawn = require('child_process').spawn;
-const reload = browserSync.reload;
 const bs = browserSync.create();
 let travis = process.env.TRAVIS || false;
 
@@ -46,7 +45,7 @@ gulp.task('js', () => {
     .pipe(source('site.js'))
     .pipe(buffer())
     .pipe(gulp.dest(`${dest}js`))
-    .pipe(gulp.dest(`${dest}js`))
+    .pipe(bs.stream())
     .pipe(notify('scripts task complete'));
 });
 
@@ -64,6 +63,7 @@ gulp.task('sass', () =>
       cascade: false
     }))
     .pipe(gulp.dest(`${dest}css`))
+    .pipe(bs.stream())
     .pipe(notify('styles task complete'))
 );
 
@@ -84,7 +84,7 @@ gulp.task('watch', () => {
   gulp.watch(`${src}js/**/*.js`, ['js', 'lint']);
 });
 
-gulp.task('default', ['build', 'browser-sync', 'watch'], reload);
+gulp.task('default', ['build', 'browser-sync', 'watch']);
 gulp.task('build', ['lint', 'js', 'sass', 'imgs']);
 
 // kill node on exit
