@@ -10,8 +10,8 @@ import notify from 'gulp-notify';
 import sass from 'gulp-sass';
 import source from 'vinyl-source-stream';
 
-const src = './src/';
-const dest = './public/';
+const src = 'src/';
+const dest = 'public/';
 
 const spawn = require('child_process').spawn;
 const reload = browserSync.reload;
