@@ -1,6 +1,7 @@
 @import '../../node_modules/include-media/dist/_include-media';
 // Generic:
 @import 'generic/_reset';
+
 // Settings:
 @import 'settings/_animation';
 @import 'settings/_borders';
@@ -10,24 +11,51 @@
 @import 'settings/_icons';
 @import 'settings/_spacing';
 @import 'settings/_zindex';
+
 // Base Elements:
 @import 'base/_document';
+
 // Tools:
 @import 'tools/_fonts';
 @import 'tools/_functions';
 @import 'tools/_icons';
 @import 'tools/_layout';
 @import 'tools/_transitions';
-// Vendor:
-// @import 'vendor/library.scss';
+
 // Objects:
-// @import 'objects/_object';
 @import 'objects/_block';
 @import 'objects/_container';
 @import 'objects/_grid';
 @import 'objects/_icon';
-// Components:
-// @import 'components/_component';
+
 // Utilities:
 @import 'utilities/_display';
 @import 'utilities/_media';
+
+// Boilerplate styles
+.main-content {
+  font-family: 'Karla', sans-serif;
+  margin: 200px auto;
+  padding: 20px;
+  max-width: 500px;
+  color: white;
+  background-color: #00BF9A;
+  .login-link {
+    float: right;
+    color: #fff;
+  } // Basic rich-text editor styles:
+  h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    font-style: italic;
+  }
+}

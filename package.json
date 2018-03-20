@@ -1,5 +1,5 @@
 {
-  "name": "starter",
+  "name": "apostrophe-gulp-starter",
   "version": "1.0.0",
   "description": "front-end starter",
   "main": "gulpfile.babel.js",
@@ -54,6 +54,6 @@
     "jquery": "global:jQuery"
   },
   "dependencies": {
-    "svg4everybody": "^2.1.9"
+    "apostrophe": "^2.47.0"
   }
 }

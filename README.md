@@ -1,3 +1,9 @@
-[![Build Status](https://travis-ci.org/punkave/frontend-starter.svg?branch=feature%2Ffonts-mixin-exts)](https://travis-ci.org/punkave/frontend-starter)
+# Apostrophe boilerplate + Gulp starter pack
 
-BrowserSync server spins up on http://localhost:3001/ (proxying port 3000). Although http://localhost:3000/ will work, use http://localhost:3001/ to utilize BrowserSync features like mirroring and CSS injection.
+## This repo serves as a demo configuration for incorporating Gulp.js with ApostropheCMS.
+
+See `gulpfile.babel.js` for how to push your custom assets to the default place Apostrophe is looking for them.
+
+Combination of the following two repositories:
+- https://github.com/apostrophecms/apostrophe-boilerplate
+- https://github.com/punkave/frontend-starter
