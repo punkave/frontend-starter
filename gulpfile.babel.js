@@ -11,7 +11,7 @@ import sass from 'gulp-sass';
 import source from 'vinyl-source-stream';
 
 const src = 'src/';
-const dest = 'lib/modules/apostrophe-assets/public/';
+const dest = 'public/';
 
 const spawn = require('child_process').spawn;
 const bs = browserSync.create();
