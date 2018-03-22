@@ -37,5 +37,6 @@
     font-style: $style;
     src: $eot;
     src: $src;
+    font-display: fallback;
   }
 }
