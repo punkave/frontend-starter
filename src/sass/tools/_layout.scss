@@ -17,7 +17,7 @@
 
 @mixin generate-columns ($number) {
   @for $i from 1 through $number {
-    .o-column-#{$i} {
+    .o-column--#{$i} {
       width: (100% * $i / $number);
     }
     .o-column--offset-#{$i} {
