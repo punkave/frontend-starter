@@ -5,7 +5,7 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "concurrently --kill-others \"gulp\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/eslint eslint ."
   },
   "repository": {
     "type": "git",
