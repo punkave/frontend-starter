@@ -2,3 +2,6 @@ node_modules
 .DS_Store
 npm-debug.log
 dist
+public/css/*.css
+public/css/*.map
+public/js/*.js
